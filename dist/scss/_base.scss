@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	height: 100vh;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: "Arial";
+	@include background;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}

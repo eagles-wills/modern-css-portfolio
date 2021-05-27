@@ -1,0 +1,199 @@
+@-webkit-keyframes fromTop {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  80% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  80% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fromBottom {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  80% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  80% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Arial";
+}
+
+body {
+  background: url(../img/florian-krumm-1osIUArK5oA-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  background: rgba(68, 68, 68, 0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.heading-primary {
+  margin: 0;
+  color: #fff;
+  font-size: 9rem;
+  -webkit-animation: fromTop 0.8s ease;
+          animation: fromTop 0.8s ease;
+}
+
+.heading-primary span {
+  display: inline-block;
+  background: linear-gradient(120deg, rgba(238, 206, 26, 0.78), rgba(243, 208, 9, 0.789));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading-secondary {
+  font-size: 4rem;
+  color: #f7f7f7;
+  -webkit-animation: fromBottom 0.8s ease;
+          animation: fromBottom 0.8s ease;
+  padding: 1rem 2rem;
+  margin-bottom: 0.4rem;
+  background: rgba(76, 76, 76, 0.5);
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+.heading-secondary:hover {
+  -webkit-transform: skew(15deg, 2deg);
+          transform: skew(15deg, 2deg);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.75);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.75);
+}
+
+.home {
+  padding: 6.4rem;
+  height: 100%;
+}
+
+.home#home {
+  overflow: hidden;
+}
+
+.home#home h1 {
+  margin-top: 20vh;
+}
+
+.icon {
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+.icon__link:link, .icon__link:visited {
+  color: #f7f7f7;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.icon__link:hover {
+  color: #eece1a;
+  -webkit-transform: translateY(-4px) scale(1.1);
+          transform: translateY(-4px) scale(1.1);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+.icon__link:active {
+  color: #eece1a;
+  -webkit-transform: translateY(-2px) scale(1.1);
+          transform: translateY(-2px) scale(1.1);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.icon:hover .icon__link:not(:hover) {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,31 @@
+.heading-primary {
+	margin: 0;
+	color: #fff;
+	font-size: 9rem;
+	animation: fromTop 0.8s ease;
+	span {
+		display: inline-block;
+		background: linear-gradient(
+			120deg,
+			rgba(238, 206, 26, 0.78),
+			rgba(243, 208, 9, 0.789)
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+}
+
+.heading-secondary {
+	font-size: 4rem;
+	color: $grey-light;
+	animation: fromBottom 0.8s ease;
+	padding: 1rem 2rem;
+	margin-bottom: 0.4rem;
+	background: rgba(lighten($primary-color, 3), 0.5);
+	transition: transform 0.8s ease;
+	&:hover {
+		transform: skew(15deg, 2deg);
+		box-shadow: 0 0.5rem 1rem rgba($color-black, 0.75);
+	}
+}
