@@ -9,36 +9,37 @@
 		<link rel="stylesheet" href="scss/main.css" />
 	</head>
 	<body>
-		<header class="header">
-			<div class="header__menu-box">
-				<div class="header__menu">&nbsp;</div>
-			</div>
-			<nav class="menu">
-				<div class="menu__branding">
-					<div class="menu__portrait"></div>
+		<div class="navigation">
+			<input
+				type="checkbox"
+				name="checkbox"
+				id="nav-toggle"
+				class="navigation__checkbox"
+			/>
+			<label for="nav-toggle" class="navigation__button">
+				<span class="navigation__icon">&nbsp;</span>
+			</label>
+			<div class="navigation__background">&nbsp;</div>
+			<nav class="navigation__nav">
+				<div class="navigation__branding">
+					<div class="navigation__portrait"></div>
 				</div>
-				<ul class="menu__list">
-					<li class="menu__item">
-						<a class="menu__link" href="/" class="menu__link">Home</a>
+				<ul class="navigation__list">
+					<li class="navigation__item">
+						<a class="navigation__link" href="#!">Home</a>
 					</li>
-					<li class="menu__item">
-						<a class="menu__link" href="/about.html" class="menu__link">
-							About
-						</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#!"> About Me </a>
 					</li>
-					<li class="menu__item">
-						<a class="menu__link" href="/work.html" class="menu__link">
-							My Work
-						</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#!"> My Work </a>
 					</li>
-					<li class="menu__item">
-						<a class="menu__link" href="/contact.html" class="menu__link">
-							How to reach me
-						</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#!"> How to reach me </a>
 					</li>
 				</ul>
 			</nav>
-		</header>
+		</div>
 		<main id="home" class="home">
 			<h1 class="heading-primary">Okosun <span>William</span></h1>
 			<h2 class="heading-secondary">

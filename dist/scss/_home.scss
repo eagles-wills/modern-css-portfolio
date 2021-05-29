@@ -7,4 +7,9 @@
 			margin-top: 20vh;
 		}
 	}
+
+	@include respond(mediaMd) {
+		text-align: center;
+		align-items: center;
+	}
 }

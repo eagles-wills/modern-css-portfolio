@@ -1,0 +1,218 @@
+.navigation {
+	&__button {
+		background-color: $grey-light;
+		height: 7rem;
+		width: 7rem;
+		position: fixed;
+		border-radius: 50%;
+		top: 3rem;
+		right: 3rem;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		z-index: 2000;
+	}
+	&__background {
+		height: 6rem;
+		width: 6rem;
+		border-radius: 50%;
+		position: fixed;
+		background-image: radial-gradient($color-secondary, #ccc);
+		opacity: 0.7;
+		top: 3.5rem;
+		right: 3.5rem;
+		transition: all 0.5s ease-in;
+		z-index: 1000;
+	}
+
+	&__nav {
+		height: 100vh;
+		position: fixed;
+		width: 0;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 1500;
+	}
+
+	&__list,
+	&__branding {
+		height: 100%;
+		width: 50%;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		float: left;
+		transition: all 0.5s ease;
+		@include respond(mediaMd) {
+			float: none;
+			width: 100%;
+			min-height: 0;
+		}
+	}
+
+	&__branding {
+		background-color: rgba(lighten($primary-color, 4), 0.4);
+		transform: translate3d(0, 100%, 0);
+		@include respond(mediaMd) {
+			height: 25vh;
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+
+	&__portrait {
+		height: 25rem;
+		width: 25rem;
+		border-radius: 50%;
+		background: url(../img/Eagles.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		border: 3px solid #eece1a;
+		@include respond(mediaMd) {
+			height: 20rem;
+			width: 20rem;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		background-color: rgba(darken($primary-color, 2), 0.6);
+		transform: translate3d(0, -100%, 0);
+		list-style: none;
+		@include respond(mediaMd) {
+			height: 75vh;
+			transform: translate3d(-100%, 0, 0);
+		}
+	}
+
+	&__item {
+		transform: translate3d(600px, 0, 0);
+		transition: all 1s ease;
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			font-weight: 300;
+			font-size: 3rem;
+			display: inline-block;
+			position: relative;
+			padding: 1rem 2rem;
+			text-transform: uppercase;
+			margin: 1rem 0;
+			background-image: linear-gradient(
+				120deg,
+				transparent 0%,
+				transparent 50%,
+				white 50%
+			);
+			background-size: 230%;
+			transition: all 0.5s ease;
+		}
+
+		&:hover {
+			background-position: 100%;
+			color: grey;
+			transform: translateX(1rem);
+			box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+		}
+		&:active {
+			background-position: 100%;
+			color: grey;
+			transform: translateY(-1rem) translateX(1rem);
+			box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	&__checkbox {
+		display: none;
+	}
+
+	&__checkbox:checked ~ &__background {
+		transform: scale(80);
+	}
+
+	&__checkbox:checked ~ &__nav {
+		opacity: 1;
+		width: 100%;
+	}
+
+	&__checkbox:checked ~ &__nav &__branding {
+		transform: translate3d(0, 0, 0);
+		@include respond(mediaMd) {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	&__checkbox:checked ~ &__nav &__list {
+		transform: translate3d(0, 0, 0);
+		@include respond(mediaMd) {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	&__checkbox:checked ~ &__nav &__list &__item {
+		transform: translate3d(0, 0, 0);
+	}
+
+	@for $x from 1 through 4 {
+		&__nav &__list &__item:nth-child(#{$x}) {
+			transition-delay: $x * 0.15s;
+		}
+	}
+
+	&__icon {
+		position: relative;
+		margin-top: 3.5rem;
+		&,
+		&::before,
+		&::after {
+			height: 2px;
+			width: 3rem;
+			background-color: #000;
+			display: inline-block;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			transition: all 0.3s ease-in;
+		}
+
+		&::before {
+			top: -0.8rem;
+		}
+		&:after {
+			top: 0.8rem;
+		}
+	}
+
+	&__button:hover &__icon::before {
+		top: -1rem;
+	}
+
+	&__button:hover &__icon::after {
+		top: 1rem;
+	}
+
+	&__checkbox:checked + &__button &__icon {
+		background-color: transparent;
+	}
+	&__checkbox:checked + &__button &__icon::before {
+		transform: rotate(135deg);
+		background-color: red;
+		top: 0;
+	}
+	&__checkbox:checked + &__button &__icon::after {
+		transform: rotate(-135deg);
+		background-color: red;
+		top: 0;
+	}
+}
