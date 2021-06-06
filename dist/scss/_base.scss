@@ -21,6 +21,10 @@ body {
 	line-height: 1.5;
 	font-weight: 400;
 	font-family: "Arial";
+	height: 100vh;
+}
+
+#bg-image {
 	@include background;
 }
 

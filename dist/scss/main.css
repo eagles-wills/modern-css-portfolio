@@ -87,9 +87,10 @@ body {
   line-height: 1.5;
   font-weight: 400;
   font-family: "Arial";
+  height: 100vh;
 }
 
-body {
+#bg-image {
   background: url(../img/florian-krumm-1osIUArK5oA-unsplash.jpg);
   background-position: center;
   background-size: cover;
@@ -100,7 +101,7 @@ body {
   z-index: 1;
 }
 
-body::after {
+#bg-image::after {
   content: "";
   background: rgba(68, 68, 68, 0.6);
   height: 100%;
@@ -498,5 +499,110 @@ a {
 .icon:hover .icon__link:not(:hover) {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.about {
+  background-color: #555;
+  color: #f5f5f5;
+  min-height: 100%;
+  padding: 5rem;
+}
+
+.about__info {
+  display: -ms-grid;
+  display: grid;
+  gap: 3rem;
+      grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 48rem) {
+  .about__info {
+        grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+  }
+}
+
+.about__image-box {
+  height: 30rem;
+  width: 30rem;
+  margin-top: 5rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .about__image-box {
+    margin: auto;
+  }
+}
+
+.about__image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: bioimage;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.about__bio {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: bio;
+  margin: auto;
+}
+
+.about__bio h3 {
+  text-transform: capitalize;
+  color: #eece1a;
+}
+
+.about .job {
+  background-color: #454545;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin: 2rem;
+  font-size: 2.4rem;
+  border-bottom: 4px solid #eece1a;
+}
+
+.about .job p {
+  text-align: left;
+}
+
+.about .job h3 {
+  text-align: center;
+  color: #eece1a;
+  text-transform: capitalize;
+  font-size: inherit;
+}
+
+.about .job-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: job1;
+}
+
+.about .job-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: job2;
+}
+
+.about .job-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: job3;
+  background-color: blue;
+}
+
+.footer {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  background-color: #373737;
+  height: 9rem;
 }
 /*# sourceMappingURL=main.css.map */
